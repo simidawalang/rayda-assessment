@@ -27,7 +27,7 @@ export const Header = () => {
         sx={{
           display: { sm: "flex" },
           justifyContent: "stretch",
-          padding: "0 1rem",
+          padding: "0 2rem 0 1rem",
           position: "relative",
           "& .avatar-img": {
             position: "absolute",
