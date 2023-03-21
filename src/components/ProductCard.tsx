@@ -1,19 +1,21 @@
+import { MouseEventHandler } from "react";
 import { Box } from "@mui/material";
+import { CustomButton } from "./CustomButton";
 
 type ProductCardProps = {
-  id?: number | string;
   name?: string;
   title?: string;
   bid?: string;
   image?: string;
+  onClick?: MouseEventHandler;
 };
 
 export const ProductCard = ({
-  id,
   name,
   title,
   bid,
   image,
+  onClick,
 }: ProductCardProps) => {
   return (
     <Box
@@ -28,6 +30,7 @@ export const ProductCard = ({
       }}
     >
       <img src={image} alt={title} />
+      <CustomButton onClick={onClick}>Add to wishlist</CustomButton>
     </Box>
   );
 };
