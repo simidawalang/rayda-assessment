@@ -16,5 +16,5 @@ export const WhiteButton = styled(Button)({
   boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
   borderRadius: "8px",
   textTransform: "unset",
-  padding: "6px 12px"
+  padding: "6px 12px",
 });

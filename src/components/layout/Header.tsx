@@ -53,9 +53,34 @@ export const Header = () => {
             <Typography sx={{ fontWeight: "600", fontSize: "24px" }}>
               Starts in: 3 days : 2 hours : 24 minutes
             </Typography>
-            <Typography sx={{ color: "#475467", fontSize: "1rem" }}>
-              Layers Auction
-            </Typography>
+            <Box sx={{ display: "flex", marginTop: "0.5rem" }}>
+              <Box
+                sx={{
+                  background: "#FFFAEB",
+                  color: "#B54708",
+                  fontSize: "12px",
+                  display: "flex",
+                  padding: "0.35rem 0.6rem",
+                  gap: "0.25rem",
+                  alignItems: "center",
+                  marginRight: "0.5rem",
+                  borderRadius: "1rem"
+                }}
+              >
+                <Box
+                  sx={{
+                    height: "6px",
+                    width: "6px",
+                    borderRadius: "50%",
+                    background: "#F79009",
+                  }}
+                />
+                Not Live
+              </Box>
+              <Typography sx={{ color: "#475467", fontSize: "1rem" }}>
+                Layers Auction
+              </Typography>
+            </Box>
           </Box>
 
           <WhiteButton
