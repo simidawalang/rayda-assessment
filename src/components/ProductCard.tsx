@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Box, Typography } from "@mui/material";
-import { CustomButton } from "./CustomButton";
+import { BlueButton } from "./CustomButtons";
 
 type ProductCardProps = {
   id?: string;
@@ -88,7 +88,9 @@ export const ProductCard = ({
         </Typography>
       </Box>
 
-      <CustomButton sx={{marginTop: "1rem", width: "100%"}}>Add to wishlist</CustomButton>
+      <BlueButton sx={{ marginTop: "1rem", width: "100%" }}>
+        Add to wishlist
+      </BlueButton>
     </Box>
   );
 };

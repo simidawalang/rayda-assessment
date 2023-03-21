@@ -1,8 +1,12 @@
-import { Box, Button, Typography } from "@mui/material";
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { loadingSpinner } from "../assets";
-import { CardsContainer, CustomButton, ProductCard } from "../components";
+import { Box, Typography } from "@mui/material";
+import {
+  CardsContainer,
+  ProductCard,
+  WhiteButton,
+  LoadingState,
+} from "../components";
+import axios from "axios";
 
 export const Home = () => {
   const [products, setProducts] = useState([]);
@@ -28,8 +32,16 @@ export const Home = () => {
     fetchData();
   }, []);
   return (
-    <Box>
-      <Box sx={{ padding: "1rem" }}>
+    <Box
+      sx={{
+        padding: "1rem",
+        border: "1px solid #EAECF0",
+        boxShadow:
+          "0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)",
+        borderRadius: "12px",
+      }}
+    >
+      <Box sx={{ borderBottom: "1px solid #EAECF0", paddingBottom: "1rem" }}>
         <Box
           sx={{
             display: "flex",
@@ -40,38 +52,10 @@ export const Home = () => {
           <Typography sx={{ fontSize: "16px", fontWeight: "600" }}>
             Featured Items
           </Typography>
-          <Button
-            sx={{
-              color: "#344054",
-              fontSize: "14px",
-              border: "1px solid #D0D5DD",
-              boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
-              borderRadius: "8px",
-              textTransform: "unset",
-            }}
-          >
-            View Auction
-          </Button>
+          <WhiteButton>View Auction</WhiteButton>
         </Box>
       </Box>
-      {loadingContent && (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          <Box>
-            <img src={loadingSpinner} alt="Loading" />
-            <Typography
-              sx={{ textAlign: "center", fontWeight: "600", fontSize: "2rem" }}
-            >
-              Loading...
-            </Typography>
-          </Box>
-        </Box>
-      )}
+      {loadingContent && <LoadingState />}
       {!loadingContent && products.length !== 0 && (
         <CardsContainer>
           {products.map(({ name, title, bid, image }, i) => (
