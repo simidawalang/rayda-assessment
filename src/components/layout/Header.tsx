@@ -12,7 +12,7 @@ export const Header = () => {
           "0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)",
         borderRadius: "12px",
         padding: "1rem",
-        marginBottom: "1.5rem",
+        margin: "1.5rem 0",
       }}
     >
       <Box
