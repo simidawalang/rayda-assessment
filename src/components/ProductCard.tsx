@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Box, Typography } from "@mui/material";
 import { BlueButton } from "./CustomButtons";
 
@@ -8,7 +7,6 @@ type ProductCardProps = {
   title?: string;
   bid?: string;
   image?: string;
-  children?: ReactNode;
 };
 
 export const ProductCard = ({
@@ -17,8 +15,8 @@ export const ProductCard = ({
   title,
   bid,
   image,
-  children,
 }: ProductCardProps) => {
+    const nameInitials = name?.split(" ");
   return (
     <Box
       key={id}
@@ -34,7 +32,12 @@ export const ProductCard = ({
       }}
     >
       <img src={image} alt={name} />
-      <Box sx={{ padding: "0.5rem 0", borderBottom: "1px solid #EAECF0" }}>
+      <Box
+        sx={{
+          padding: "0.5rem 0",
+          borderBottom: "1px solid #EAECF0",
+        }}
+      >
         <Box sx={{ marginBottom: "1rem" }}>
           <Box
             sx={{
@@ -62,7 +65,7 @@ export const ProductCard = ({
                 color: "#475467",
               }}
             >
-              {name}
+              {nameInitials && `${nameInitials[0][0]}${nameInitials[1][0]}`}
             </Box>
             <span className="name">{name}</span>{" "}
             <span className="highest-bidder">&#40;Higest Bidder&#41;</span>
@@ -72,7 +75,7 @@ export const ProductCard = ({
           sx={{
             fontSize: "14px",
             fontWeight: "600",
-            marginBottom: "0.75rem",
+            marginBottom: "0.75rem",height: "40px"
           }}
         >
           {title}
