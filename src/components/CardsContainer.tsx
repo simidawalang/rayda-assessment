@@ -10,8 +10,8 @@ export const CardsContainer = ({ children }: ContainerProps) => {
     <Box
       sx={{
         display: "grid",
-        gap: "1rem",
-        gridTemplateColumns: { md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" },
+        gap: {xs: "1rem", md: "1.5rem"},
+        gridTemplateColumns: { sm: "repeat(2, 1fr)", md: "repeat(4, 1fr)" },
       }}
     >
       {children}

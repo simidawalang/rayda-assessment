@@ -10,7 +10,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <Box
       sx={{
         margin: "auto",
-        maxWidth: "1300px",
+        maxWidth: "1200px",
         padding: { xs: "0 1rem", md: "0 2rem" },
       }}
     >
