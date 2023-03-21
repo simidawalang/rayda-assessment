@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Box } from "@mui/material";
 import { Navbar } from "./Navbar";
+import { Header } from "./Header";
 
 type LayoutProps = {
   children?: ReactNode;
@@ -18,6 +19,7 @@ export const Layout = ({ children }: LayoutProps) => {
     >
 
     <Navbar />
+    <Header />
       {children}
     </Box>
     </>

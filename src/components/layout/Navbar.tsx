@@ -4,7 +4,7 @@ import { bellIcon } from "../../assets";
 export const Navbar = () => {
   return (
     <Box
-      component="header"
+      component="nav"
       sx={{
         display: "flex",
         justifyContent: "space-between",
@@ -19,7 +19,7 @@ export const Navbar = () => {
       }}
     >
       <Box>
-        <Typography component="h1" sx={{ fontSize: "30px" }}>
+        <Typography component="h1" sx={{ fontSize: "30px", fontWeight: "600" }}>
           Welcome
         </Typography>
         <Typography sx={{ color: "#475467" }}>
