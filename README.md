@@ -19,3 +19,6 @@ Once the installation is complete, start the project in the root directory by ru
 This runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+
+Live link for this project: [Rayda Assessment](https://rayda-assessment.vercel.app/).
+
