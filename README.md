@@ -1,6 +1,6 @@
-# Getting Started
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was built using React, TypeScript, Material UI and Redux Toolkit.
 
 ## Cloning Repo
 In your desired directory on your machine, run:
@@ -13,7 +13,14 @@ In the root directory, run:
 ##### `yarn install`
 
 ## Running the Application
-Once the installation is complete, start the project in the root directory by running:
+Once the installation is complete, you will need to include the API key. 
+Create an .env file in the root directory. Within it, put:
+
+
+#### `REACT_APP_API_KEY=7f02819f-8254-410a-b8af-ab98572bd26b`
+
+
+You can start the project in the root directory by running:
 #### `yarn start`
 
 This runs the app in the development mode.\
