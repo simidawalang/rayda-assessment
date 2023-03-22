@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Box, Typography } from "@mui/material";
 import {
   CardsContainer,
@@ -6,31 +7,18 @@ import {
   WhiteButton,
   LoadingState,
 } from "../components";
-import axios from "axios";
+import { getProducts } from "../redux/products/productSlice";
+import { AppDispatch } from "../redux/store";
 
 export const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [loadingContent, setLoadingContent] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
 
-  const fetchData = async () => {
-    setLoadingContent(true);
-    try {
-      const {
-        data: { data },
-      } = await axios.get(
-        "https://run.mocky.io/v3/7f02819f-8254-410a-b8af-ab98572bd26b"
-      );
-
-      setProducts(data);
-    } catch (e) {
-      console.debug(e);
-    }
-    setLoadingContent(false);
-  };
+  const { products } = useSelector((state: any) => state);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(getProducts());
+  }, [dispatch]);
+  
   return (
     <Box
       sx={{
@@ -55,18 +43,20 @@ export const Home = () => {
           <WhiteButton>View Auction</WhiteButton>
         </Box>
       </Box>
-      {loadingContent && <LoadingState />}
-      {!loadingContent && products.length !== 0 && (
+      {products.loading && <LoadingState />}
+      {!products.loading && products?.products?.data?.length !== 0 && (
         <CardsContainer>
-          {products.map(({ name, title, bid, image }, i) => (
-            <ProductCard
-              key={i}
-              name={name}
-              title={title}
-              image={image}
-              bid={bid}
-            />
-          ))}
+          {products?.products?.data?.map(
+            ({ name, title, bid, image }: any, i: any) => (
+              <ProductCard
+                key={i}
+                name={name}
+                title={title}
+                image={image}
+                bid={bid}
+              />
+            )
+          )}
         </CardsContainer>
       )}
     </Box>
